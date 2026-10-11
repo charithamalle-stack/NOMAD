@@ -31,7 +31,7 @@ const [missionCompleted, setMissionCompleted] = useState(false);
     const canvasRef = useRef(null);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/health")
+    fetch("https://nomad-l3q5.onrender.com/health")
       .then((response) => response.json())
       .then((data) => {
         setBackendStatus(data.status);
@@ -100,7 +100,7 @@ setMissionCompleted(false);
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/analyze-environment",
+        "https://nomad-l3q5.onrender.com/analyze-environment",
         {
           method: "POST",
           body: formData,
