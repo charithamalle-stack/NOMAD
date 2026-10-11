@@ -11,16 +11,19 @@ load_dotenv(override=True)
 
 app = FastAPI(title="NOMAD API")
 
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
         "http://localhost:5174",
+        "https://nomad-1-wb4n.onrender.com",
     ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 
 @app.get("/")
